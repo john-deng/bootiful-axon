@@ -1,0 +1,14 @@
+
+logging:
+  level:
+    org.springframework: info
+    org.axonframework: debug
+    com.example: debug
+
+spring:
+  rabbitmq:
+    addresses: localhost:5672
+
+server:
+  port: 8083
+

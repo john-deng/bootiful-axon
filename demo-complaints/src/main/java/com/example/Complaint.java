@@ -1,13 +1,12 @@
 package com.example;
 
+import cn.vpclub.moses.utils.common.IdWorker;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.commandhandling.model.AggregateIdentifier;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.spring.stereotype.Aggregate;
-
-import java.util.UUID;
 
 import static org.axonframework.commandhandling.model.AggregateLifecycle.apply;
 
@@ -20,9 +19,9 @@ public class Complaint {
 
     @CommandHandler
     public Complaint(FileComplaintCommand cmd) {
-        String id = UUID.randomUUID().toString();
+        Long id = IdWorker.getId();
         log.info("on command handler, cmd: {}", cmd);
-        apply(new ComplaintFiledEvent(id, cmd.getCompany(), cmd.getDescription()));
+        apply(new ComplaintFiledEvent(id.toString(), cmd.getCompany(), cmd.getDescription()));
     }
 
     @EventSourcingHandler

@@ -3,8 +3,8 @@
 logging:
   level:
     org.springframework: info
-    org.axonframework: debug
-    com.example: debug
+    org.axonframework: info
+    com.example: info
 
   pattern:
     console: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{64})  - %msg%n"
@@ -22,10 +22,8 @@ axon:
   amqp:
     exchange: Complaints
 
-#spring:
-#  rabbitmq:
-#    addresses: localhost:5672
+spring:
+  rabbitmq:
+    addresses: rabbitmq.rabbitmq-${spring.profiles.active}.svc.cluster.local:5672
 
-server:
-  port: 8083
 

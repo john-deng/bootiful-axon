@@ -1,0 +1,7 @@
+
+spring:
+  rabbitmq:
+    addresses: rabbitmq.rabbitmq-test.svc.cluster.local:5672
+
+
+
