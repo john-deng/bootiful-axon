@@ -1,0 +1,31 @@
+
+
+logging:
+  level:
+    org.springframework: info
+    org.axonframework: debug
+    com.example: debug
+
+  pattern:
+    console: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{64})  - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: logs/application.log
+
+locale:
+  aop-class: cn.vpclub.moses.web.aop.MessageAspectImpl
+  basenames:
+  - classpath:i18n/messages #应用自定义消息
+  - classpath:i18n/validatorMessages #通用校验消息
+  - classpath:i18n/commonMessages  #通用消息
+
+axon:
+  amqp:
+    exchange: ComplaintEvents
+
+#spring:
+#  rabbitmq:
+#    addresses: localhost:5672
+
+server:
+  port: 8083
+
