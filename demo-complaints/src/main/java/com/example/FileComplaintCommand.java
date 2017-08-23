@@ -1,4 +1,4 @@
-package com.example.democomplaints;
+package com.example;
 
 import cn.vpclub.moses.utils.validator.AbstractGenericParameter;
 import cn.vpclub.moses.utils.validator.annotations.NotEmpty;

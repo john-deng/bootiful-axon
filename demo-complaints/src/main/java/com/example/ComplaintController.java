@@ -1,4 +1,4 @@
-package com.example.democomplaints;
+package com.example;
 
 import cn.vpclub.moses.core.constant.MessageCodeConstant;
 import cn.vpclub.moses.core.model.response.Response;

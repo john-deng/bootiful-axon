@@ -1,4 +1,4 @@
-package com.example.democomplaints;
+package com.example;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

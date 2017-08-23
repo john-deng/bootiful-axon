@@ -69,7 +69,7 @@
 
 	<modules>
 		<module>demo-complaints</module>
-		<module>demo-complaint-stats</module>
+		<module>demo-complaints-stats</module>
 	</modules>
 
 

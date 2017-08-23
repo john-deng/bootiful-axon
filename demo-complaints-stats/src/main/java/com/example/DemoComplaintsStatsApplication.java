@@ -1,4 +1,4 @@
-package com.example.democomplaintstats;
+package com.example;
 
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
@@ -35,7 +35,7 @@ public class DemoComplaintsStatsApplication {
 
 		@EventHandler
 		public void on(ComplaintFiledEvent event) {
-			log.info("on EventHandler()");
+			log.info("on EventHandler(), event: {}", event);
 			statistics.computeIfAbsent(event.getCompany(), k -> new AtomicLong()).incrementAndGet();
 		}
 
@@ -49,7 +49,7 @@ public class DemoComplaintsStatsApplication {
 	public SpringAMQPMessageSource statisticsQueue(Serializer serializer) {
 		return new SpringAMQPMessageSource(new DefaultAMQPMessageConverter(serializer)) {
 
-			@RabbitListener(queues = "ComplaintEvents")
+			@RabbitListener(queues = "Complaints")
 			@Override
 			public void onMessage(Message message, Channel channel) throws Exception {
 				log.info("onMessage()");

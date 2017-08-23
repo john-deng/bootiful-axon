@@ -1,4 +1,4 @@
-package com.example.democomplaints;
+package com.example;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
