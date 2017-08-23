@@ -17,6 +17,10 @@ locale:
   - classpath:i18n/validatorMessages #通用校验消息
   - classpath:i18n/commonMessages  #通用消息
 
+spring:
+  rabbitmq:
+    addresses: rabbitmq.mq-${spring.profiles.active}.svc.cluster.local:5672
+
 axon:
   eventhandling:
     processors:
