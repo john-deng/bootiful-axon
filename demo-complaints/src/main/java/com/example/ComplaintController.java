@@ -44,6 +44,25 @@ public class ComplaintController extends AbstractController {
         return response;
     }
 
+    @PostMapping("/complaints-async")
+    @ResponseBody
+    public CompletableFuture<String> fileComplaintAsync(@RequestBody FileComplaintCommand cmd) {
+
+        CompletableFuture<String> future = null;
+
+        try {
+            cmd.validate("complaint");
+
+            log.info("commandGateway send cmd: {}", cmd);
+            future = commandGateway.send(cmd);
+            log.info("commandGateway is sent, result: {}", future);
+        } catch (AttributeValidatorException e) {
+            log.error("{}", e.getMessage());
+        }
+
+        return future;
+    }
+
     @GetMapping("/find")
     public List<ComplaintQueryObject> findAll() {
         return repository.findAll();

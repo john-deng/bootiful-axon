@@ -11,7 +11,10 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class FileComplaintCommand extends AbstractGenericParameter<String> {
+public class FileComplaintCommand extends AbstractGenericParameter {
+
+    private String id;
+
     @NotEmpty
     private final String company;
     @NotEmpty
